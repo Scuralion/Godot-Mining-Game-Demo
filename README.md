@@ -1,5 +1,5 @@
 <p align="justify">
-Small Demo of a Mining Game I made with Godot.
+Small Demo of a Mining Game I made with Godot (Version 4.2).
 The Demo Features a small Area with Static and Minable Blocks.
 Some Blocks spawn Crystals which can be collected and are beeing kept track of.
 Blocks block the vision and the TileMap updates accordingly if blocks get destroyed.
