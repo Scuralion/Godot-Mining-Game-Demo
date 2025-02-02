@@ -1,7 +1,6 @@
 extends Control
+class_name PlayerUI
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	### Conect signals
 	AutoloadMinerals.minerals_bg_updated.connect(update_label_bg)
@@ -12,7 +11,7 @@ func _ready():
 	## scale reltativ zo zoom
 	scale = Vector2(zoom,zoom)
 	
-	##Rescale stuff
+	## Rescale stuff
 	await get_tree().process_frame
 	get_node("MarginContainer/VBoxContainer").scale = Vector2(2,2)
 	

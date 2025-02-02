@@ -13,9 +13,6 @@ height = 16.0
 collision_mask = 8
 script = ExtResource("1_mxukl")
 mining_tool = NodePath("MiningTool")
-jump_height = 40
-jump_time_to_peak = 0.5
-jump_time_to_descent = 0.5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.0625, 0.125)
