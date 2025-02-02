@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dw18oio2d3qxn"]
+
+[ext_resource type="Texture2D" uid="uid://dmfnsr6tf3bgv" path="res://icon.svg" id="1_lq7yi"]
+[ext_resource type="Script" path="res://scripts/player_related_scripts/player.gd" id="1_mxukl"]
+[ext_resource type="PackedScene" uid="uid://bb1dajtruawge" path="res://scenes/player_related/mining_tool_related/mining_tool.tscn" id="3_hkpem"]
+[ext_resource type="PackedScene" uid="uid://d26ivfmf3ug3d" path="res://scenes/player_related/ui.tscn" id="4_tb0pe"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2f74b"]
+radius = 4.0
+height = 16.0
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("mining_tool")]
+collision_mask = 8
+script = ExtResource("1_mxukl")
+mining_tool = NodePath("MiningTool")
+jump_height = 40
+jump_time_to_peak = 0.5
+jump_time_to_descent = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0625, 0.125)
+texture = ExtResource("1_lq7yi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_2f74b")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+
+[node name="MiningTool" parent="." instance=ExtResource("3_hkpem")]
+position = Vector2(5, 0)
+
+[node name="UI" parent="." instance=ExtResource("4_tb0pe")]

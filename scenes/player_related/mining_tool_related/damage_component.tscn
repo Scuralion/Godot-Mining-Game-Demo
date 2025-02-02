@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnovu1j8jhv3a"]
+
+[ext_resource type="Script" path="res://scripts/player_related_scripts/mining_tool_related_scripts/DamageComponent.gd" id="1_piqd5"]
+
+[node name="DamageComponent" type="Node2D"]
+script = ExtResource("1_piqd5")
+tool_damage = 5
+damage_tic_time = 0.3
+
+[node name="DamageDelayTimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="timeout" from="DamageDelayTimer" to="." method="_on_damage_delay_timer_timeout"]
