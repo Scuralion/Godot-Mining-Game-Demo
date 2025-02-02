@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://byyqpux7qwk0"]
+[gd_scene load_steps=18 format=3 uid="uid://byyqpux7qwk0"]
 
 [ext_resource type="PackedScene" uid="uid://dw18oio2d3qxn" path="res://scenes/player_related/player.tscn" id="1_816fq"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_kvit2"]
@@ -9,9 +9,6 @@
 [ext_resource type="Script" path="res://scripts/TileMap.gd" id="5_pwp8k"]
 [ext_resource type="Texture2D" uid="uid://cyhof7yv0g2x4" path="res://Sprites/mining/Mining-Minerals and Breaking.png" id="7_adbxs"]
 [ext_resource type="PackedScene" uid="uid://35hbt4y1l3c7" path="res://scenes/level_related/Crystal_Particle.tscn" id="8_f30l0"]
-[ext_resource type="PackedScene" uid="uid://x1gvt34obc5y" path="res://scenes/level_related/crystal_body.tscn" id="9_o4a7e"]
-[ext_resource type="PackedScene" uid="uid://c1lw6ttx3oefx" path="res://scenes/level_related/crystal_body_big.tscn" id="11_padm0"]
-[ext_resource type="PackedScene" uid="uid://b24k8flhrdaho" path="res://scenes/enemies/enemie.tscn" id="12_lsqsw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_alotc"]
 texture = ExtResource("3_aucp0")
@@ -1929,16 +1926,5 @@ collision_mask = 6
 
 [node name="CrystalParticle" parent="." instance=ExtResource("8_f30l0")]
 position = Vector2(-40, 40)
-
-[node name="CrystalBody" parent="." instance=ExtResource("9_o4a7e")]
-position = Vector2(16, -48)
-
-[node name="CrystalBody2" parent="." instance=ExtResource("11_padm0")]
-position = Vector2(27, 85)
-
-[node name="Enemie" parent="." instance=ExtResource("12_lsqsw")]
-position = Vector2(147, -70)
-collision_layer = 32
-collision_mask = 7
 
 [connection signal="block_removed" from="TileMap" to="." method="handle_walls"]
